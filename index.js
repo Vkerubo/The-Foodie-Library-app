@@ -86,6 +86,7 @@ heartButton.addEventListener("click", () => {
   heartButton.querySelector("i").classList.toggle("red");
 });
 
-
+heartButton.querySelector("i").classList.add("red");
+    })
 }
 })
