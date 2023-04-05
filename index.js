@@ -65,7 +65,8 @@ const renderRecipes = (recipeList = []) => {
                 <ul>
                     ${recipeStepString}
                 </ul>
-            <button
+            <button class = "like-button">Like</button>
+            <span class = "like-count">0</span>
           </div>`;
          recipeContainer.insertAdjacentHTML("beforeend", htmlString);
     })
