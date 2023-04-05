@@ -85,6 +85,16 @@ header img {
     color: var(--light-color);
 }
 
+footer {
+    background-color: #333333;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
 #recipe-container {
     display: flex;
     justify-content: center;
