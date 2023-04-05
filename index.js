@@ -6,6 +6,7 @@ const recipeContainer = document.querySelector("#recipe-container");
 const textSearch = document.querySelector("#textSearch");
 const buttonFind = document.querySelector(".button");
 const loadingElement = document.querySelector("#loading");
+const filledHeartIcon = document.getElementById("filled-heart-icon");
  
 
 buttonFind.addEventListener("click", () => loadRecipes(textSearch.value));
@@ -74,6 +75,17 @@ const renderRecipes = (recipeList = []) => {
             </div>
           </div>`;
          recipeContainer.insertAdjacentHTML("beforeend", htmlString);
-    })
+           
+          // Add event listener to the heart button
+
+const heartButton = recipeContainer.lastElementChild.querySelector(".heart-button");
+heartButton.addEventListener("click", () => {
+  heartButton.classList.toggle("clicked");
+  heartButton.querySelector("i").classList.toggle("fas");
+  heartButton.querySelector("i").classList.toggle("far");
+  heartButton.querySelector("i").classList.toggle("red");
+});
+
+
 }
 })

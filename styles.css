@@ -209,3 +209,7 @@ header img {
 .heart-button.clicked .fas {
     display: block;
 }
+
+.red {
+    color: red;
+}
