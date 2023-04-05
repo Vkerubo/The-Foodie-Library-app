@@ -6,6 +6,7 @@ const recipeContainer = document.querySelector("#recipe-container");
 const textSearch = document.querySelector("#textSearch");
 const buttonFind = document.querySelector(".button");
 const loadingElement = document.querySelector("#loading");
+ 
 
 buttonFind.addEventListener("click", () => loadRecipes(textSearch.value));
 
@@ -57,7 +58,12 @@ const renderRecipes = (recipeList = []) => {
         } = recipeObj.recipe;
         const recipeStepString = getRecipeStepsString(ingredientLines);
         const htmlString = ` <div class="recipe"> 
-            <div class="recipe-title">${recipeTitle}</div>
+            <div class="recipe-title">
+            ${recipeTitle}
+            <button class = "heart-button">
+            <i class="far fa-heart"></i>
+            <i class="fas fa-heart"></i></button>
+            </div>
             <div class="recipe-image">
                <img src="${recipeImage}" alt = "Recipe"/> 
             </div>
@@ -65,8 +71,7 @@ const renderRecipes = (recipeList = []) => {
                 <ul>
                     ${recipeStepString}
                 </ul>
-            <button class = "like-button">Like</button>
-            <span class = "like-count">0</span>
+            </div>
           </div>`;
          recipeContainer.insertAdjacentHTML("beforeend", htmlString);
     })
