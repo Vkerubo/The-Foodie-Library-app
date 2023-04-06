@@ -6,6 +6,7 @@ const recipeContainer = document.querySelector("#recipe-container");
 const textSearch = document.querySelector("#textSearch");
 const buttonFind = document.querySelector(".button");
 const loadingElement = document.querySelector("#loading");
+const filledHeartIcon = document.getElementById("filled-heart-icon");
  
 
 buttonFind.addEventListener("click", () => loadRecipes(textSearch.value));
