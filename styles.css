@@ -40,7 +40,9 @@ header {
     padding-left: 20px;
 }
 
-
+h2 {
+    font-family: 'Kaushan Script', cursive;
+}
 
 header img {
     filter: invert(1);  
