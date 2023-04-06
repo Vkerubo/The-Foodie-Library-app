@@ -103,7 +103,7 @@ footer {
 }
 
 #recipe-container {
-    background-image: url(images/pexels-sasha-martynov-1260727.jpg);
+   
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -235,3 +235,4 @@ footer {
 .red {
     color: red;
 }
+
