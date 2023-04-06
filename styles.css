@@ -97,6 +97,7 @@ footer {
 }
 
 #recipe-container {
+   
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -109,7 +110,7 @@ footer {
 .recipe {
     height: 300px;
     width: 300px;
-    box-shadow: 0px 0px 8px 2px var(--border-color);
+    box-shadow: 0px 0px 8px 2px black;
     margin: 20px;
     transition: all 200ms ease-in-out;
     border-radius: 8px 8px 0px 0px;
@@ -196,7 +197,7 @@ footer {
     color: #333;
     cursor: pointer;
     font-size: 1.2em;
-    margin-left: 90px;
+    margin-left: 60px;
     padding: 0;
     transition: color 0.2s ease-in-out;
 }
