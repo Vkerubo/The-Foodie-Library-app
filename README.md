@@ -1,6 +1,6 @@
 # THE FOODIE LIBRARY APP
 
-This is a web application that allows users to search for recipes based on a keyword. The application makes use of the Edamam Recipe Search API to fetch recipes and display them on the web page.
+This is a simple recipe search engine that uses the Edamam Recipe Search API to find recipes based on specific ingredients and health preferences.
 
 ## Getting Started
 
@@ -8,13 +8,34 @@ To use this application, you will need to obtain an API key and ID from [Edamam 
 
 To run the application, simply open the `index.html` file in your web browser.
 
+## Technologies used
+This project uses the following technologies:
+
+- HTML
+- CSS
+- Javascript
+- Edamam Recipe Search API
+
 ## Usage
 
-Type in a keyword in the search bar and click the "Search" button or press enter to fetch a list of recipes that match the keyword. The application will display the recipe title, image, and ingredients. You can also click on the heart icon on each recipe to save it to your favorites list.
+To use this app, follow these steps:
+
+1. Type in a food type (e.g. chicken, beef, etc.) in the search bar.
+2. Select a health filter from the dropdown list (e.g. low-fat, low-carb, etc.).
+3. Click the "Search" button to search for recipes.
+4. View the list of recipes that match your search criteria.
+5. Click on a recipe to view the recipe details.
 
 ## Credits
 
-This application was built using HTML, CSS, and JavaScript. It makes use of the [Edamam Recipe Search API](https://developer.edamam.com/edamam-recipe-api) to fetch recipes.
+This project uses the following third-party libraries and resources:
+
+- Edamam Recipe Search API (https://developer.edamam.com/)
+- Font Awesome (https://fontawesome.com/)
+- Google Fonts (https://fonts.google.com/)
+- Unsplash (https://unsplash.com/)
+- Pexels (https://www.pexels.com/)
+- Freepik (https://www.freepik.com/)
 
 ## License
 
