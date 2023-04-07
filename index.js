@@ -95,7 +95,9 @@ const renderRecipes = (recipeList = []) => {
   
       // Add event listener to show recipe details on hover
       const recipe = recipeContainer.lastElementChild;
-      recipe.addEventListener("mouseover", () => {
+      recipe.addEventListener("click", (e) => {
+        e.stopPropagation();
+        console.log("click");
         const modal = document.createElement("div");
         modal.classList.add("modal");
         const modalContent = `
