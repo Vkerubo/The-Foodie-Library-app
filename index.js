@@ -6,7 +6,8 @@ const recipeContainer = document.querySelector("#recipe-container");
 const textSearch = document.querySelector("#textSearch");
 const buttonFind = document.querySelector(".button");
 const loadingElement = document.querySelector("#loading");
-const feedbackButton = document.getElementById("feedback-button")
+const feedbackButton = document.getElementById("feedback-button");
+const aboutButton = document.getElementById("about-button");
  
 
 buttonFind.addEventListener("click", () => loadRecipes(textSearch.value));
@@ -169,4 +170,17 @@ filterDropdown.addEventListener("change", () => {
  alert("Thank you for your feedback!");
     }
  })
-})
+  
+const aboutInfo = "The NutriCookLibrary allows you to search for recipes based on specific ingredients and health preferences. It is designed to help users find healthy recipes that meet their dietary requirements, or for those who want to try new recipes using ingredients they already have on hand.";
+
+ aboutButton.addEventListener("click", () => {
+    alert(aboutInfo);
+  });
+  
+  const contactButton = document.getElementById("contact-button");
+  const contactInfo = "Email us here";
+
+  contactButton.addEventListener("click", () => {
+    alert(contactInfo);
+  });
+});
