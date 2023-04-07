@@ -21,14 +21,19 @@
         <div class="search">
             <input id="textSearch" type="text" placeholder="What are you curious about?" autofocus/>
             <button class="button">Search</button>
+            <label for="filter"><em>Filter by health:</em></label>
             <select id="filterDropdown">
+                <option value="" selected disabled hidden>choose filter</option>
                 <option value="all">All</option>
                 <option value="vegan">Vegan</option>
-                <option value="ingredient">Ingredient</option>
-                <option value="cuisine-type">Cuisine-type</option>
+                <option value="vegetarian">vegetarian</option>
+                <option value="low-sugar">Low-sugar</option>
+                <option value="low-fat">Low-fat</option>
                 <option value="low-carb">Low-Carb</option>
-                <option value="meal-type">Meal-type</option>
+                <option value="high-protein">High-protein</option>
+                <option value="high-fiber">High-Fiber</option>
               </select>
+              
         </div>
         <div id="recipe-container"></div>
     </section>
@@ -38,7 +43,7 @@
             <li><a href="#" class="tooltip" title="Facebook"><i class="fab fa-facebook"></i></a></li>
             <li><a href="#" class="tooltip" title="Twitter"><i class="fab fa-twitter"></i></a></li>
             <li><a href="#" class="tooltip" title="Instagram"><i class="fab fa-instagram"></i></a></li>
-        </ul>
+          </ul>
 	</footer>
 </body>
 </html>

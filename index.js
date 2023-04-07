@@ -6,7 +6,6 @@ const recipeContainer = document.querySelector("#recipe-container");
 const textSearch = document.querySelector("#textSearch");
 const buttonFind = document.querySelector(".button");
 const loadingElement = document.querySelector("#loading");
-const filledHeartIcon = document.getElementById("filled-heart-icon");
  
 
 buttonFind.addEventListener("click", () => loadRecipes(textSearch.value));
@@ -27,11 +26,19 @@ const setScrollPosition = () => {
 }
 
 //use fetch to make the API request
-function loadRecipes( type = "chicken") {
+function loadRecipes( type = "chicken", filter = "all") {
     toggleLoad(loadingElement, false);
-    const url = baseUrl + `&q=${type}`;
+    let url = baseUrl + `&q=${type}`;
+    if (filter !== "all"){
+        url += `&health=${filter}`
+    }
+    console.log(url);
     fetch(url)
-     .then((res) => res.json())
+     .then((res) =>{
+        if (!res.ok) {
+            throw new Error("Network response was not ok");
+        }
+      return res.json()})
      .then((data) => {
       renderRecipes(data.hits);
       toggleLoad(loadingElement, true); 
@@ -40,6 +47,12 @@ function loadRecipes( type = "chicken") {
      .finally(() => setScrollPosition()); 
 }
 loadRecipes();
+
+const filterDropdown = document.querySelector("#filterDropdown");
+filterDropdown.addEventListener("change", () => {
+  const selectedFilter = filterDropdown.value;
+  loadRecipes(textSearch.value, selectedFilter);
+});
 
 const getRecipeStepsString = (ingredientLines = []) => {
     let string = "";
