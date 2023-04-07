@@ -46,7 +46,8 @@ h2 {
 }
 
 header img {
-    filter: invert(1);  
+    filter: invert(1); 
+    height: 100px; 
 }
 
 .search {
