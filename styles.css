@@ -166,14 +166,8 @@ footer {
     padding: 5px;
 }
 
-.recipe:hover .recipe-text {
-    display: block;
-    height: 120px;
-    opacity: 1;
-    transform: scale(1);
-}
 .recipe:hover {
-    height: 420px;
+    height: 300px;
 }
 
 ::selection {
