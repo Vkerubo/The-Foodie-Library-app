@@ -99,9 +99,7 @@ filterDropdown.addEventListener("change", () => {
       );
       heartButton.addEventListener("click", () => {
         heartButton.classList.toggle("clicked");
-        heartButton.querySelector("i").classList.toggle("fas");
         heartButton.querySelector("i").classList.toggle("far");
-        heartButton.querySelector("i").classList.toggle("red");
       });
 
   
