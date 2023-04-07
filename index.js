@@ -102,9 +102,7 @@ const renderRecipes = (recipeList = []) => {
         heartButton.querySelector("i").classList.toggle("far");
         heartButton.querySelector("i").classList.toggle("red");
       });
-  
-      // Add "red" class to heart button
-      heartButton.querySelector("i").classList.add("red");
+
   
       // Add event listener to show recipe details on hover
       const recipe = recipeContainer.lastElementChild;
