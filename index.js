@@ -50,35 +50,61 @@ const getRecipeStepsString = (ingredientLines = []) => {
 }
 
 const renderRecipes = (recipeList = []) => {
-    recipeContainer.innerHTML = " ";
+    recipeContainer.innerHTML = "";
     recipeList.forEach((recipeObj) => {
-        const {
-            label: recipeTitle,
-            ingredientLines,
-            image: recipeImage,
-            calories,
-            cautions,
-            cuisineType,
-            dietLabels,
-            healthLabels,
-            mealType,
-            totalNutrients
-        } = recipeObj.recipe;
-        const recipeStepString = getRecipeStepsString(ingredientLines);
-        const htmlString = ` <div class="recipe"> 
-            <div class="recipe-title">
-            ${recipeTitle}
-            <button class = "heart-button">
+      const {
+        label: recipeTitle,
+        ingredientLines,
+        image: recipeImage,
+        calories,
+        cautions,
+        cuisineType,
+        dietLabels,
+        healthLabels,
+        mealType,
+        totalNutrients,
+      } = recipeObj.recipe;
+      const recipeStepString = getRecipeStepsString(ingredientLines);
+      const htmlString = ` <div class="recipe">
+        <div class="recipe-title">
+          ${recipeTitle}
+          <button class="heart-button">
             <i class="far fa-heart"></i>
-            <i class="fas fa-heart"></i></button>
-            </div>
-            <div class="recipe-image">
-               <img src="${recipeImage}" alt = "Recipe"/> 
-            </div>
-            <div class="recipe-text">
-                <ul>
-                    ${recipeStepString}
-                </ul>
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
+        <div class="recipe-image">
+          <img src="${recipeImage}" alt="Recipe" />
+        </div>
+      </div>`;
+      recipeContainer.insertAdjacentHTML("beforeend", htmlString);
+  
+      // Add event listener to the heart button
+      const heartButton = recipeContainer.lastElementChild.querySelector(
+        ".heart-button"
+      );
+      heartButton.addEventListener("click", () => {
+        heartButton.classList.toggle("clicked");
+        heartButton.querySelector("i").classList.toggle("fas");
+        heartButton.querySelector("i").classList.toggle("far");
+        heartButton.querySelector("i").classList.toggle("red");
+      });
+  
+      // Add "red" class to heart button
+      heartButton.querySelector("i").classList.add("red");
+  
+      // Add event listener to show recipe details on hover
+      const recipe = recipeContainer.lastElementChild;
+      recipe.addEventListener("mouseover", () => {
+        const modal = document.createElement("div");
+        modal.classList.add("modal");
+        const modalContent = `
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="recipe-details">
+              <img src="${recipeImage}" alt="Recipe" />
+              <div class="recipe-info">
+                <h2>${recipeTitle}</h2>
                 <p>Calories: ${calories.toFixed(2)}</p>
                 <p>Cautions: ${cautions.join(", ")}</p>
                 <p>Cuisine Type: ${cuisineType}</p>
@@ -87,27 +113,41 @@ const renderRecipes = (recipeList = []) => {
                 <p>Meal Type: ${mealType.join(", ")}</p>
                 <p>Total Nutrients:</p>
                 <ul>
-                    <li>Carbs: ${totalNutrients.CHOCDF.quantity.toFixed(2)} ${totalNutrients.CHOCDF.unit}</li>
-                    <li>Fat: ${totalNutrients.FAT.quantity.toFixed(2)} ${totalNutrients.FAT.unit}</li>
-                    <li>Protein: ${totalNutrients.PROCNT.quantity.toFixed(2)} ${totalNutrients.PROCNT.unit}</li>
+                  <li>Carbs: ${totalNutrients.CHOCDF.quantity.toFixed(
+                    2
+                  )} ${totalNutrients.CHOCDF.unit}</li>
+                  <li>Fat: ${totalNutrients.FAT.quantity.toFixed(
+                    2
+                  )} ${totalNutrients.FAT.unit}</li>
+                  <li>Protein: ${totalNutrients.PROCNT.quantity.toFixed(
+                    2
+                  )} ${totalNutrients.PROCNT.unit}</li>
                 </ul>
+                <p>Recipe Steps:</p>
+                <ul>
+                  ${recipeStepString}
+                </ul>
+              </div>
             </div>
-          </div>`;
-     
-         recipeContainer.insertAdjacentHTML("beforeend", htmlString);
-           
-       console.log(recipeList);  
-    // Add event listener to the heart button
-    const heartButton = recipeContainer.lastElementChild.querySelector(".heart-button");
-    heartButton.addEventListener("click", () => {
-      heartButton.classList.toggle("clicked");
-      heartButton.querySelector("i").classList.toggle("fas");
-      heartButton.querySelector("i").classList.toggle("far");
-      heartButton.querySelector("i").classList.toggle("red");
-    });
+          </div>
+        `;
+        modal.innerHTML = modalContent;
+        document.body.appendChild(modal);
   
-    // Add "red" class to heart button
-    heartButton.querySelector("i").classList.add("red");
-  });
-}
+        const closeModal = () => {
+          console.log("Closing modal");
+          modal.remove();
+        };
+        const closeElement = modal.querySelector(".close");
+        if (closeElement) {
+          closeElement.addEventListener("click", closeModal);
+        }
+        window.addEventListener("click", (event) => {
+          if (event.target === modal) {
+            closeModal();
+          }
+        });
+      });
+    });
+  };
 })
