@@ -57,6 +57,7 @@ const renderRecipes = (recipeList = []) => {
             ingredientLines,
             image: recipeImage,
             calories,
+            cautions,
             cuisineType,
             dietLabels,
             healthLabels,
