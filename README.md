@@ -1,4 +1,4 @@
-# THE FOODIE LIBRARY APP
+# The NutriCook Library app
 
 This is a simple recipe search engine that uses the Edamam Recipe Search API to find recipes based on specific ingredients and health preferences.
 
