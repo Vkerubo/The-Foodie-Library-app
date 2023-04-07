@@ -6,6 +6,7 @@ const recipeContainer = document.querySelector("#recipe-container");
 const textSearch = document.querySelector("#textSearch");
 const buttonFind = document.querySelector(".button");
 const loadingElement = document.querySelector("#loading");
+const feedbackButton = document.getElementById("feedback-button")
  
 
 buttonFind.addEventListener("click", () => loadRecipes(textSearch.value));
@@ -54,15 +55,15 @@ filterDropdown.addEventListener("change", () => {
   loadRecipes(textSearch.value, selectedFilter);
 });
 
-const getRecipeStepsString = (ingredientLines = []) => {
+   const getRecipeStepsString = (ingredientLines = []) => {
     let string = "";
     for (const step of ingredientLines){
         string = string+`<li>${step}</li>`
     }
     return string;
-}
+   }
 
-const renderRecipes = (recipeList = []) => {
+   const renderRecipes = (recipeList = []) => {
     recipeContainer.innerHTML = "";
     recipeList.forEach((recipeObj) => {
       const {
@@ -163,4 +164,11 @@ const renderRecipes = (recipeList = []) => {
       });
     });
   };
+
+ feedbackButton.addEventListener("click", () => {
+    const feedback = prompt("Please leave your feedback:");
+    if (feedback) {
+ alert("Thank you for your feedback!");
+    }
+ })
 })
