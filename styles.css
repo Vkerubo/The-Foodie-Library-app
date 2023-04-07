@@ -333,4 +333,15 @@ footer {
     cursor: pointer;
   }
 
-  
+  #feedback-button {
+    background-color: #aaa;
+    color: #000;
+    padding: 8px 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  #feedback-button:hover {
+    background-color: #4e8380;
+  }
