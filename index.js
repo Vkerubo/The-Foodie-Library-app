@@ -56,6 +56,13 @@ const renderRecipes = (recipeList = []) => {
             label: recipeTitle,
             ingredientLines,
             image: recipeImage,
+            calories,
+            cautions,
+            cuisineType,
+            dietLabels,
+            healthLabels,
+            mealType,
+            totalNutrients
         } = recipeObj.recipe;
         const recipeStepString = getRecipeStepsString(ingredientLines);
         const htmlString = ` <div class="recipe"> 
@@ -72,10 +79,24 @@ const renderRecipes = (recipeList = []) => {
                 <ul>
                     ${recipeStepString}
                 </ul>
+                <p>Calories: ${calories.toFixed(2)}</p>
+                <p>Cautions: ${cautions.join(", ")}</p>
+                <p>Cuisine Type: ${cuisineType}</p>
+                <p>Diet Labels: ${dietLabels.join(", ")}</p>
+                <p>Health Labels: ${healthLabels.join(", ")}</p>
+                <p>Meal Type: ${mealType.join(", ")}</p>
+                <p>Total Nutrients:</p>
+                <ul>
+                    <li>Carbs: ${totalNutrients.CHOCDF.quantity.toFixed(2)} ${totalNutrients.CHOCDF.unit}</li>
+                    <li>Fat: ${totalNutrients.FAT.quantity.toFixed(2)} ${totalNutrients.FAT.unit}</li>
+                    <li>Protein: ${totalNutrients.PROCNT.quantity.toFixed(2)} ${totalNutrients.PROCNT.unit}</li>
+                </ul>
             </div>
           </div>`;
+     
          recipeContainer.insertAdjacentHTML("beforeend", htmlString);
            
+       console.log(recipeList);  
     // Add event listener to the heart button
     const heartButton = recipeContainer.lastElementChild.querySelector(".heart-button");
     heartButton.addEventListener("click", () => {
