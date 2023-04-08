@@ -31,11 +31,14 @@ body {
 
 header {
     height: var(--header-height);
-    background-color: var(--dark-color);
+    background-image: url(images/header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: left;
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    color: var(--light-color);
+    color: rgb(19, 9, 9);
     gap: 10px;
     padding-left: 20px;
 }
@@ -47,7 +50,7 @@ h2 {
 
 header img {
     filter: invert(1); 
-    height: 100px; 
+    height: 120px; 
 }
 
 .search {
