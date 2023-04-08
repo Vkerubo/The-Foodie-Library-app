@@ -125,6 +125,7 @@ footer {
 .recipe {
     height: 250px;
     width: 250px;
+    background-color: rgba(190, 134, 88, 0.356);
     box-shadow: 0px 0px 8px 2px rgb(23, 24, 23);
     margin: 20px;
     transition: all 200ms ease-in-out;
@@ -195,8 +196,26 @@ footer {
 }
 
 @media only screen and (max-width: 700px){
+    header {
+        height: 80px;
+        padding-left: 10px;
+        justify-content: center;
+    }
+
+    header img {
+        height: 60px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+    
     body {
-        background:#5ea1ec;
+        background:white;
     }
 }
 
