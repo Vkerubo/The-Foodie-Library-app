@@ -97,8 +97,11 @@ header img {
 }
 
 footer {
-    background-color: #333333;
-    color: #ffffff;
+    background-image: url(images/header.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    color: #0e0d0d;
     text-align: center;
     padding: 10px 0px;
     position: absolute;
